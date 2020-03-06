@@ -49,7 +49,7 @@ jobs:
       - save_cache:
           key: repo-{{ .Environment.CIRCLE_SHA1 }}
           paths:
-            - /go/src/github.com/newrelic/newrelic-cli
+            - ~/project
 
   lint:
     docker:
