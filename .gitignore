@@ -1,10 +1,7 @@
-tmp/*
-bin/*
-dist/*
-coverage/*
-vendor/*
-
-*.csv
-
-.vscode/
 .DS_Store
+.vscode/
+bin/*
+coverage/*
+dist/*
+tmp/*
+vendor/*
