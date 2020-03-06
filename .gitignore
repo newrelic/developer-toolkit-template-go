@@ -1,0 +1,10 @@
+tmp/*
+bin/*
+dist/*
+coverage/*
+vendor/*
+
+*.csv
+
+.vscode/
+.DS_Store
