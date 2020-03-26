@@ -4,7 +4,7 @@
 [![Go Report Card](https://goreportcard.com/badge/github.com/newrelic/developer-toolkit-template-go?style=flat-square)](https://goreportcard.com/report/github.com/newrelic/developer-toolkit-template-go)
 [![GoDoc](https://godoc.org/github.com/newrelic/developer-toolkit-template-go?status.svg)](https://godoc.org/github.com/newrelic/developer-toolkit-template-go)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/newrelic/developer-toolkit-template-go/blob/master/LICENSE)
-[![CLA](https://cla-assistant.io/readme/badge/newrelic/developer-toolkit-template-go)](https://cla-assistant.io/newrelic/developer-toolkit-template-go)
+[![CLA assistant](https://cla-assistant.io/readme/badge/newrelic/developer-toolkit-template-go)](https://cla-assistant.io/newrelic/developer-toolkit-template-go)
 [![Release](https://img.shields.io/github/release/newrelic/developer-toolkit-template-go/all.svg)](https://github.com/newrelic/developer-toolkit-template-go/releases/latest)
 
 # TODO
