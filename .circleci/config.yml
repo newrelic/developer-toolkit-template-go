@@ -11,9 +11,11 @@ workflows:
           requires:
             - checkout_code
       - test:
+          #context: Developer Toolkit
           requires:
             - checkout_code
       - security-scan:
+          context: Developer Toolkit
           requires:
             - checkout_code
       - compile:
@@ -31,6 +33,7 @@ workflows:
           require:
             - compile
       - release:
+          context: Developer Toolkit
           filters:
             branches:
               ignore: /.*/
