@@ -8,17 +8,21 @@ before:
     - make clean
     - go mod download
 
-# This is a hack to NOT build binaries...
-builds:
-  -
-    id: "default"
-    goos:
-      - linux
-    goarch:
-      - amd64
-    ignore:
-      - goos: linux
-        goarch: amd64
+# Libraries with no bins, enable this
+# otherwise remove build and use a 'builds' section
+build:
+  skip: true
+
+#builds:
+#  -
+#    id: "default"
+#    goos:
+#      - linux
+#    goarch:
+#      - amd64
+#    ignore:
+#      - goos: linux
+#        goarch: amd64
 #  -
 #    id: newrelic
 #    dir: cmd/newrelic
