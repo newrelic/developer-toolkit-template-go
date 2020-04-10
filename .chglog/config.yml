@@ -2,7 +2,7 @@ style: github
 template: CHANGELOG.tpl.md
 info:
   title: CHANGELOG
-  repository_url: https://github.com/newrelic/developer-toolkit-template-go
+  repository_url: https://github.com/newrelic/newrelic-client-go
 options:
   commits:
     filters:
@@ -10,14 +10,12 @@ options:
         - docs
         - feat
         - fix
-        - refactor
 
   commit_groups:
     title_maps:
       docs: Documentation Updates
       feat: Features
       fix: Bug Fixes
-      refactor: Refactor
 
   refs:
     actions:
@@ -30,7 +28,7 @@ options:
       - #
 
   header:
-    pattern: "^(\\w*)(?:\\(([\\w\\$\\.\\-\\*\\s]*)\\))?\\:\\s(.*)$"
+    pattern: "^(\\w*)(?:\\(([\\/\\w\\$\\.\\-\\*\\s]*)\\))?\\:\\s(.*)$"
     pattern_maps:
       - Type
       - Scope
