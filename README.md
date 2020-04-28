@@ -1,6 +1,7 @@
 # developer-toolkit-template-go
 
-[![CircleCI](https://circleci.com/gh/newrelic/developer-toolkit-template-go.svg?style=svg)](https://circleci.com/gh/newrelic/developer-toolkit-template-go)
+[![Testing](https://github.com/newrelic/developer-toolkit-template-go/workflows/Testing/badge.svg)](https://github.com/newrelic/developer-toolkit-template-go/actions)
+[![Security Scan](https://github.com/newrelic/developer-toolkit-template-go/workflows/Security%20Scan/badge.svg)](https://github.com/newrelic/developer-toolkit-template-go/actions)
 [![Go Report Card](https://goreportcard.com/badge/github.com/newrelic/developer-toolkit-template-go?style=flat-square)](https://goreportcard.com/report/github.com/newrelic/developer-toolkit-template-go)
 [![GoDoc](https://godoc.org/github.com/newrelic/developer-toolkit-template-go?status.svg)](https://godoc.org/github.com/newrelic/developer-toolkit-template-go)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/newrelic/developer-toolkit-template-go/blob/master/LICENSE)
