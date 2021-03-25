@@ -1,5 +1,8 @@
 <a name="v0.3.0"></a>
 ## [v0.3.0] - 2021-03-24
+### Documentation Updates
+- Fix CHANGELOG links
+
 ### Features
 - Add docker image building, code gen
 
@@ -24,7 +27,7 @@
 - **build/release:** Fix script reference for release.sh
 - **circleci:** Save default working dir instead
 
-[Unreleased]: https://github.com/newrelic/newrelic-client-go/compare/v0.3.0...HEAD
-[v0.3.0]: https://github.com/newrelic/newrelic-client-go/compare/v0.2.1...v0.3.0
-[v0.2.1]: https://github.com/newrelic/newrelic-client-go/compare/v0.2.0...v0.2.1
-[v0.2.0]: https://github.com/newrelic/newrelic-client-go/compare/v0.1.0...v0.2.0
+[Unreleased]: https://github.com/newrelic/developer-toolkit-template-go/compare/v0.3.0...HEAD
+[v0.3.0]: https://github.com/newrelic/developer-toolkit-template-go/compare/v0.2.1...v0.3.0
+[v0.2.1]: https://github.com/newrelic/developer-toolkit-template-go/compare/v0.2.0...v0.2.1
+[v0.2.0]: https://github.com/newrelic/developer-toolkit-template-go/compare/v0.1.0...v0.2.0
