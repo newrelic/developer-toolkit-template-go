@@ -2,8 +2,6 @@
 # Makefile fragment for displaying auto-generated documentation
 #
 
-GOTOOLS     += golang.org/x/tools/cmd/godoc \
-               github.com/git-chglog/git-chglog/cmd/git-chglog
 GODOC       ?= godoc
 GODOC_HTTP  ?= "localhost:6060"
 
@@ -25,7 +23,7 @@ changelog: tools
 	@$(CHANGELOG_CMD) --silent -o $(CHANGELOG_FILE)
 
 release-notes: tools
-	@echo "=== $(PROJECT_NAME) === [ release-notes    ]: Generating release notes..."
+	@echo "=== $(PROJECT_NAME) === [ release-notes    ]: Generating release notes for v$(PROJECT_VER_TAGGED) ..."
 	@mkdir -p $(SRCDIR)/tmp
 	@$(CHANGELOG_CMD) --silent -o $(SRCDIR)/tmp/$(RELEASE_NOTES_FILE) v$(PROJECT_VER_TAGGED)
 
