@@ -1,16 +1,16 @@
-# developer-toolkit-template-go
+# app-template-go
 
-[![Testing](https://github.com/newrelic/developer-toolkit-template-go/workflows/Testing/badge.svg)](https://github.com/newrelic/developer-toolkit-template-go/actions)
-[![Security Scan](https://github.com/newrelic/developer-toolkit-template-go/workflows/Security%20Scan/badge.svg)](https://github.com/newrelic/developer-toolkit-template-go/actions)
-[![Go Report Card](https://goreportcard.com/badge/github.com/newrelic/developer-toolkit-template-go?style=flat-square)](https://goreportcard.com/report/github.com/newrelic/developer-toolkit-template-go)
-[![GoDoc](https://godoc.org/github.com/newrelic/developer-toolkit-template-go?status.svg)](https://godoc.org/github.com/newrelic/developer-toolkit-template-go)
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/newrelic/developer-toolkit-template-go/blob/master/LICENSE)
-[![CLA assistant](https://cla-assistant.io/readme/badge/newrelic/developer-toolkit-template-go)](https://cla-assistant.io/newrelic/developer-toolkit-template-go)
-[![Release](https://img.shields.io/github/release/newrelic/developer-toolkit-template-go/all.svg)](https://github.com/newrelic/developer-toolkit-template-go/releases/latest)
+[![Testing](https://github.com/jjttech/app-template-go/workflows/Testing/badge.svg)](https://github.com/jjttech/app-template-go/actions)
+[![Security Scan](https://github.com/jjttech/app-template-go/workflows/Security%20Scan/badge.svg)](https://github.com/jjttech/app-template-go/actions)
+[![Go Report Card](https://goreportcard.com/badge/github.com/jjttech/app-template-go?style=flat-square)](https://goreportcard.com/report/github.com/jjttech/app-template-go)
+[![GoDoc](https://godoc.org/github.com/jjttech/app-template-go?status.svg)](https://godoc.org/github.com/jjttech/app-template-go)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/jjttech/app-template-go/blob/master/LICENSE)
+[![CLA assistant](https://cla-assistant.io/readme/badge/jjttech/app-template-go)](https://cla-assistant.io/jjttech/app-template-go)
+[![Release](https://img.shields.io/github/release/jjttech/app-template-go/all.svg)](https://github.com/jjttech/app-template-go/releases/latest)
 
 # TODO
 
-Find and replace all instances of `developer-toolkit-template-go` in ALL files
+Find and replace all instances of `app-template-go` in ALL files
 with the name of your repo.
 
 
@@ -25,12 +25,12 @@ with the name of your repo.
 
 New Relic hosts and moderates an online forum where customers can interact with New Relic employees as well as other customers to get help and share best practices. 
 
-* [Roadmap](https://newrelic.github.io/developer-toolkit/roadmap/) - As part of the Developer Toolkit, the roadmap for this project follows the same RFC process
-* [Issues or Enhancement Requests](https://github.com/newrelic/developer-toolkit-template-go/issues) - Issues and enhancement requests can be submitted in the Issues tab of this repository. Please search for and review the existing open issues before submitting a new issue.
+* [Roadmap](https://jjttech.github.io/developer-toolkit/roadmap/) - As part of the Developer Toolkit, the roadmap for this project follows the same RFC process
+* [Issues or Enhancement Requests](https://github.com/jjttech/app-template-go/issues) - Issues and enhancement requests can be submitted in the Issues tab of this repository. Please search for and review the existing open issues before submitting a new issue.
 * [Contributors Guide](CONTRIBUTING.md) - Contributions are welcome (and if you submit a Enhancement Request, expect to be invited to contribute it yourself :grin:).
-* [Community discussion board](https://discuss.newrelic.com/c/build-on-new-relic/developer-toolkit) - Like all official New Relic open source projects, there's a related Community topic in the New Relic Explorers Hub.
+* [Community discussion board](https://discuss.jjttech.com/c/build-on-new-relic/developer-toolkit) - Like all official New Relic open source projects, there's a related Community topic in the New Relic Explorers Hub.
 
-Keep in mind that when you submit your pull request, you'll need to sign the CLA via the click-through using CLA-Assistant. If you'd like to execute our corporate CLA, or if you have any questions, please drop us an email at opensource@newrelic.com.
+Keep in mind that when you submit your pull request, you'll need to sign the CLA via the click-through using CLA-Assistant. If you'd like to execute our corporate CLA, or if you have any questions, please drop us an email at opensource@jjttech.com.
 
 
 ## Development
@@ -99,7 +99,7 @@ This refers to what part of the code is the focus of the work.  For example:
 
 **Package Specific:**
 
-* `newrelic` - Work related to the New Relic package
+* `jjttech` - Work related to the New Relic package
 * `http` - Work related to the `internal/http` package
 * `alerts` - Work related to the `pkg/alerts` package
 

@@ -1,4 +1,4 @@
-module github.com/newrelic/developer-toolkit-template-go/tools
+module github.com/jjttech/app-template-go/tools
 
 go 1.16
 
