@@ -52,16 +52,16 @@ linters:
   enable:
     - deadcode
     - errcheck
-    - goimports
+    - exportloopref
     - gocyclo
     - gofmt
+    - goimports
     - golint
     - gosimple
     - govet
     - ineffassign
     - misspell
     - nolintlint
-    - scopelint
     - staticcheck
     - structcheck
     - thelper
