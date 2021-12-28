@@ -4,8 +4,7 @@
 
 GO               ?= go
 GOFMT            ?= gofmt
-GO_MOD_OUTDATED  ?= go-mod-outdated
-BUILD_DIR        ?= ./bin/
+GO_MOD_OUTDATED  ?= $(GOBIN)/go-mod-outdated
 
 # Go file to track tool deps with go modules
 TOOL_DIR     ?= tools

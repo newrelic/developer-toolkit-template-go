@@ -3,10 +3,7 @@
 #
 
 GO           ?= go
-GOLINTER     ?= golangci-lint
-MISSPELL     ?= misspell
-GOFMT        ?= gofmt
-TEST_RUNNER  ?= gotestsum
+TEST_RUNNER  ?= $(GOBIN)/gotestsum
 
 COVERAGE_DIR ?= ./coverage/
 COVERMODE    ?= atomic
@@ -18,15 +15,15 @@ PROJECT_MODULE ?= $(shell $(GO) list -m)
 
 LDFLAGS_UNIT ?= '-X $(PROJECT_MODULE)/internal/version.GitTag=$(PROJECT_VER_TAGGED)'
 
-test: test-only
+test: test-only cover-report
 test-only: test-unit test-integration
 
-test-unit: tools
+test-unit: tools deps-only
 	@echo "=== $(PROJECT_NAME) === [ test-unit        ]: running unit tests..."
 	@mkdir -p $(COVERAGE_DIR)
 	@$(TEST_RUNNER) -f testname --junitfile $(COVERAGE_DIR)/unit.xml -- -v -ldflags=$(LDFLAGS_UNIT) -parallel 4 -tags unit -covermode=$(COVERMODE) -coverprofile $(COVERAGE_DIR)/unit.tmp $(GO_PKGS)
 
-test-integration: tools
+test-integration: tools deps-only
 	@echo "=== $(PROJECT_NAME) === [ test-integration ]: running integration tests..."
 	@mkdir -p $(COVERAGE_DIR)
 	@$(TEST_RUNNER) -f testname --junitfile $(COVERAGE_DIR)/integration.xml --rerun-fails=3 --packages "$(GO_PKGS)" -- -v -parallel 4 -tags integration -covermode=$(COVERMODE) -coverprofile $(COVERAGE_DIR)/integration.tmp $(GO_PKGS)

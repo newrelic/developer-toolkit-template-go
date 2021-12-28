@@ -1,41 +1,47 @@
 #!/bin/bash
 
-COLOR_RED='\033[0;31m'
-COLOR_NONE='\033[0m'
-CURRENT_GIT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
+SRCDIR=${SRCDIR:-"."}
+GOBIN=$(go env GOPATH)/bin
+VER_PACKAGE="internal/version"
+VER_CMD=${GOBIN}/svu
+VER_BUMP=${GOBIN}/gobump
+CHANGELOG_CMD=${GOBIN}/git-chglog
+REL_CMD=${GOBIN}/goreleaser
+RELEASE_NOTES_FILE=${SRCDIR}/tmp/relnotes.md
 
-if [ $CURRENT_GIT_BRANCH != 'master' ]; then
-  printf "\n"
-  printf "${COLOR_RED} Error: The release.sh script must be run while on the master branch. \n ${COLOR_NONE}"
-  printf "\n"
+# Compare versions
+VER_CURR=$(${VER_CMD} current --strip-prefix)
+VER_NEXT=$(${VER_CMD} next --strip-prefix)
 
-  exit 1
+# Github Enterprise work-around for Goreleaser
+export GITHUB_TOKEN="${GITHUB_TOKEN:-$GHE_TOKEN}"
+
+if [ "${VER_CURR}" != "${VER_NEXT}" ]; then
+  echo "Generating release for v${VER_NEXT}"
+  # Bump package version
+  ${VER_BUMP} set ${VER_NEXT} -r -w ${VER_PACKAGE}
+
+  # Auto-generate CHANGELOG updates
+  ${CHANGELOG_CMD} --next-tag v${VER_NEXT} -o CHANGELOG.md
+
+  GIT_USER=$(git config user.name)
+  GIT_EMAIL=$(git config user.email)
+  #[ -z "${GIT_USER}" ]  && git config --global user.name "goreleaser"
+  #[ -z "${GIT_EMAIL}" ] && git config --global user.email "youremail@example.com"
+
+  # Commit CHANGELOG updates
+  git add CHANGELOG.md ${VER_PACKAGE}/
+
+  git commit -m "chore(release): Releasing v${VER_NEXT}"
+  git tag v${VER_NEXT}
+  git push origin HEAD:master --tags
+
+  # Make release notes
+  ${CHANGELOG_CMD} --silent -o ${RELEASE_NOTES_FILE} v${VER_NEXT}
+
+  # Publish the release
+  ${REL_CMD} release --release-notes=${RELEASE_NOTES_FILE}
+else
+  echo "No new version recommended, skipping"
 fi
 
-if [ $# -ne 1 ]; then
-  printf "\n"
-  printf "${COLOR_RED} Error: Release version argument required. \n\n ${COLOR_NONE}"
-  printf " Example: \n\n    ./tools/release.sh 0.9.0 \n\n"
-  printf "  Example (make): \n\n    make release version=0.9.0 \n"
-  printf "\n"
-
-  exit 1
-fi
-
-RELEASE_VERSION=$1
-GIT_USER=$(git config user.email)
-
-echo "Generating release for v${RELEASE_VERSION} using system user git user ${GIT_USER}"
-
-git checkout -b release/v${RELEASE_VERSION}
-
-# Auto-generate CHANGELOG updates
-git-chglog --next-tag v${RELEASE_VERSION} -o CHANGELOG.md
-
-# Update version in version.go file
-echo -e "package version\n\n// Version of this library\nconst Version string = \"${RELEASE_VERSION}\"" > internal/version/version.go
-
-# Commit CHANGELOG updates
-git add CHANGELOG.md internal/version/version.go
-git commit -m "chore(changelog): Update CHANGELOG for v${RELEASE_VERSION}"
-git push origin release/v${RELEASE_VERSION}
