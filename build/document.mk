@@ -5,7 +5,7 @@
 GODOC       ?= godoc
 GODOC_HTTP  ?= "localhost:6060"
 
-CHANGELOG_CMD      ?= git-chglog
+CHANGELOG_CMD      ?= $(GOBIN)/git-chglog
 CHANGELOG_FILE     ?= CHANGELOG.md
 RELEASE_NOTES_FILE ?= relnotes.md
 
