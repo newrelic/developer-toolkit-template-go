@@ -1,4 +1,4 @@
-module source.datanerd.us/commune/go-sanus/tools
+module github.com/newrelic/developer-toolkit-template-go/tools
 
 go 1.17
 

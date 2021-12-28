@@ -39,8 +39,7 @@ build:
 #        -X github.com/newrelic/developer-toolkit-template-go/internal/version.Version={{.Version}}
 
 release:
-  # Mark as a pre-release for now
-  prerelease: true
+  #prerelease: true
   name_template: "{{.ProjectName}} v{{.Version}}"
 
 #archives:
