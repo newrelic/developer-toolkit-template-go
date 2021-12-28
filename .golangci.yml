@@ -20,15 +20,13 @@ linters-settings:
   govet:
     # report about shadowed variables
     check-shadowing: true
-  golint:
-    # minimal confidence for issues, default is 0.8
-    min-confidence: 0.5
   gocyclo:
     # minimal code complexity to report, 30 by default (but we recommend 10-20)
     min-complexity: 26
-  maligned:
-    # print struct with more effective memory layout or not, false by default
-    suggest-new: true
+  importas:
+    alias:
+      - pkg: github.com/sirupsen/logrus
+        alias: log
   nolintlint:
     # Enable to ensure that nolint directives are all used. Default is true.
     allow-unused: false
@@ -37,31 +35,25 @@ linters-settings:
   depguard:
     list-type: blacklist
     include-go-root: false
-    packages:
-      - github.com/davecgh/go-spew/spew
-  misspell:
-    ignore-words:
-      - newrelic
-  lll:
-    # max line length, lines longer will be reported. Default is 120.
-    # '\t' is counted as 1 character by default, and can be changed with the tab-width option
-    line-length: 150
+    packages-with-error-message:
+      - log: 'for logging, use: log "github.com/sirupsen/logrus"'
 
 linters:
   disable-all: true
   enable:
+    - depguard
     - deadcode
     - errcheck
     - goimports
     - gocyclo
     - gofmt
-    - golint
     - gosimple
     - govet
+    - importas
     - ineffassign
     - misspell
     - nolintlint
-    - scopelint
+    - revive
     - staticcheck
     - structcheck
     - thelper
