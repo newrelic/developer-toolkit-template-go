@@ -1,3 +1,8 @@
+<a name="v0.4.1"></a>
+## [v0.4.1] - 2022-08-16
+### Bug Fixes
+- require go 1.18.x
+
 <a name="v0.4.0"></a>
 ## [v0.4.0] - 2021-12-28
 ### Features
@@ -33,7 +38,8 @@
 - **build/release:** Fix script reference for release.sh
 - **circleci:** Save default working dir instead
 
-[Unreleased]: https://github.com/newrelic/developer-toolkit-template-go/compare/v0.4.0...HEAD
+[Unreleased]: https://github.com/newrelic/developer-toolkit-template-go/compare/v0.4.1...HEAD
+[v0.4.1]: https://github.com/newrelic/developer-toolkit-template-go/compare/v0.4.0...v0.4.1
 [v0.4.0]: https://github.com/newrelic/developer-toolkit-template-go/compare/v0.3.0...v0.4.0
 [v0.3.0]: https://github.com/newrelic/developer-toolkit-template-go/compare/v0.2.1...v0.3.0
 [v0.2.1]: https://github.com/newrelic/developer-toolkit-template-go/compare/v0.2.0...v0.2.1
